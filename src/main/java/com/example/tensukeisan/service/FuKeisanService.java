@@ -1,7 +1,10 @@
 package com.example.tensukeisan.service;
 
-import ch.qos.logback.core.joran.sanity.Pair;
+import com.example.tensukeisan.entity.Atama;
+import com.example.tensukeisan.entity.Mentsu;
+import com.example.tensukeisan.enums.Kaze;
 import com.example.tensukeisan.enums.MachiType;
+import com.example.tensukeisan.enums.MentsuType;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -9,7 +12,12 @@ import java.util.List;
 @Service
 public class FuKeisanService {
 
-    public int fuKeisan(List<String> mentsuTypes, Pair<String, String> atama, MachiType machiType, List<String> yakus) {
+    public int fuKeisan(List<Mentsu> mentsus,
+                        Atama atama,
+                        MachiType machiType,
+                        List<String> yakus,
+                        Kaze baKaze,
+                        Kaze jiKaze) {
 
         int resultFu = 0;
 
@@ -27,31 +35,27 @@ public class FuKeisanService {
         }
 
         // 頭による加符
-        if ("自風牌".equals(atama.first) || "場風牌".equals(atama.first)) {
+        if (baKaze.equals(atama.getHai1()) || jiKaze.equals(atama.getHai1())) {
             resultFu += 2;
         }
 
         // 各メンツのごとの計算
-        for (String mentsuType : mentsuTypes) {
+        for (Mentsu mentsu : mentsus) {
             // 順子の場合は加符無し
-            if ("順子".equals(mentsuType)) {
+            if (MentsuType.SHUNTSU.equals(mentsu.getMentsuType())) {
                 resultFu += 0;
             }
-
             // 暗刻の場合はヤオチュウ牌は8、それ以外は4
-            if ("暗刻".equals(mentsuType)) {
-                //TODO メンツの中の牌の種類をちゃんと確認するようにFixする
-                if ("么九牌".equals(mentsuType)) {
+            if (MentsuType.ANKO.equals(mentsu.getMentsuType())) {
+                if (mentsu.getHai1().isYaochu()) {
                     resultFu += 8;
                 } else {
                     resultFu += 4;
                 }
             }
-
             // 明刻の場合はヤオチュウ牌は4、それ以外は2
-            if ("明刻".equals(mentsuType)) {
-                //TODO メンツの中の牌の種類をちゃんと確認するようにFixする
-                if ("么九牌".equals(mentsuType)) {
+            if (MentsuType.MINKO.equals(mentsu.getMentsuType())) {
+                if (mentsu.getHai1().isYaochu()) {
                     resultFu += 4;
                 } else {
                     resultFu += 2;
