@@ -1,6 +1,7 @@
 package com.example.tensukeisan.service;
 
 import ch.qos.logback.core.joran.sanity.Pair;
+import com.example.tensukeisan.enums.MachiType;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -8,7 +9,7 @@ import java.util.List;
 @Service
 public class FuKeisanService {
 
-    public int fuKeisan(List<String> mentsuTypes, Pair<String, String> atama, String machiType, List<String> yakus) {
+    public int fuKeisan(List<String> mentsuTypes, Pair<String, String> atama, MachiType machiType, List<String> yakus) {
 
         int resultFu = 0;
 
@@ -21,7 +22,7 @@ public class FuKeisanService {
         }
 
         // 待ち種による加符
-        if ("嵌張".equals(machiType) || "辺張".equals(machiType) || "単騎".equals(machiType)) {
+        if (MachiType.KANCHAN.equals(machiType) || MachiType.PENCHAN.equals(machiType) || MachiType.TANKI.equals(machiType)) {
             resultFu += 2;
         }
 
