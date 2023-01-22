@@ -12,6 +12,15 @@ import java.util.List;
 @Service
 public class FuKeisanService {
 
+    /**
+     * 和了手牌と場風と自風を受け取って符計算を行う。
+     * fuKeisanExceptRoundUp で行った符を 1の位 で切り上げる。
+     *
+     * @param agariTehai
+     * @param baKaze
+     * @param jiKaze
+     * @return
+     */
     public static int fuKeisan(AgariTehai agariTehai,
                                Kaze baKaze,
                                Kaze jiKaze) {
@@ -21,6 +30,15 @@ public class FuKeisanService {
         return ((int)roundUpFu) * 10;
     }
 
+    /**
+     * 和了手牌と場風と自風を受け取って符計算を行う。
+     * このメソッドでは最終的に 1の位 の切り上げは行わない。
+     *
+     * @param agariTehai
+     * @param baKaze
+     * @param jiKaze
+     * @return
+     */
     public static int fuKeisanExceptRoundUp(AgariTehai agariTehai,
                                             Kaze baKaze,
                                             Kaze jiKaze) {
