@@ -13,8 +13,17 @@ import java.util.List;
 public class FuKeisanService {
 
     public static int fuKeisan(AgariTehai agariTehai,
-                        Kaze baKaze,
-                        Kaze jiKaze) {
+                               Kaze baKaze,
+                               Kaze jiKaze) {
+        int nativeFu = fuKeisanExceptRoundUp(agariTehai, baKaze, jiKaze);
+        double nativeFu10 = ((double)nativeFu) / 10;
+        double roundUpFu = Math.ceil(nativeFu10);
+        return ((int)roundUpFu) * 10;
+    }
+
+    public static int fuKeisanExceptRoundUp(AgariTehai agariTehai,
+                                            Kaze baKaze,
+                                            Kaze jiKaze) {
 
         List<Mentsu> mentsus = List.of(agariTehai.getMentsu1(),
                 agariTehai.getMentsu2(),

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class TensuKeisanController {
 
     @RequestMapping
-    public int tensuKeisan(AgariTehai agariTehai,
+    public double tensuKeisan(AgariTehai agariTehai,
                            Kaze bakaze,
                            Kaze jikaze) {
         return FuKeisanService.fuKeisan(agariTehai, bakaze, jikaze);

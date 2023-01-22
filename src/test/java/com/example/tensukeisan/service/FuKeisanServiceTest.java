@@ -9,7 +9,6 @@ import com.example.tensukeisan.enums.Kaze;
 import com.example.tensukeisan.enums.MachiType;
 import com.example.tensukeisan.enums.MentsuType;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -54,7 +53,8 @@ class FuKeisanServiceTest {
                 mentsu1, mentsu2, mentsu3, mentsu4,
                 MachiType.RYANMEN, false);
 
-        assertEquals(32, FuKeisanService.fuKeisan(tehai, Kaze.EAST, Kaze.SOUTH));
+        assertEquals(32, FuKeisanService.fuKeisanExceptRoundUp(tehai, Kaze.EAST, Kaze.SOUTH));
+        assertEquals(40, FuKeisanService.fuKeisan(tehai, Kaze.EAST, Kaze.SOUTH));
 
     }
 }
