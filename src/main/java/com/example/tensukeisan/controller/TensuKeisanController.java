@@ -9,16 +9,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TensuKeisanController {
 
-    private final FuKeisanService fuKeisanService;
-
-    public TensuKeisanController(FuKeisanService fuKeisanService) {
-        this.fuKeisanService = fuKeisanService;
-    }
-
     @RequestMapping
     public int tensuKeisan(AgariTehai agariTehai,
                            Kaze bakaze,
                            Kaze jikaze) {
-        return fuKeisanService.fuKeisan(agariTehai, bakaze, jikaze);
+        return FuKeisanService.fuKeisan(agariTehai, bakaze, jikaze);
     }
 }
