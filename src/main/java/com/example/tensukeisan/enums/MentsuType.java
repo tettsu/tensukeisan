@@ -14,4 +14,8 @@ public enum MentsuType {
         this.mentsuTypeString = mentsuTypeString;
     }
 
+    public String getMentsuTypeString() {
+        return mentsuTypeString;
+    }
+
 }

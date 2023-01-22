@@ -14,4 +14,8 @@ public enum MachiType {
         this.machiTypeString = machiTypeString;
     }
 
+    public String getMachiTypeString() {
+        return machiTypeString;
+    }
+
 }

@@ -13,4 +13,8 @@ public enum HaiType {
         this.haiTypeString = haiTypeString;
     }
 
+    public String getHaiTypeString() {
+        return this.haiTypeString;
+    }
+
 }

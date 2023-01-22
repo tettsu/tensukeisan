@@ -13,4 +13,8 @@ public enum Kaze {
         this.kazeString = kazeString;
     }
 
+    public String getKazeString() {
+        return this.kazeString;
+    }
+
 }
