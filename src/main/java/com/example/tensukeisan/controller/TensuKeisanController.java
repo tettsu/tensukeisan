@@ -1,5 +1,7 @@
 package com.example.tensukeisan.controller;
 
+import com.example.tensukeisan.entity.AgariTehai;
+import com.example.tensukeisan.enums.Kaze;
 import com.example.tensukeisan.service.FuKeisanService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,7 +16,9 @@ public class TensuKeisanController {
     }
 
     @RequestMapping
-    public int tensuKeisan() {
-        return 1000;
+    public int tensuKeisan(AgariTehai agariTehai,
+                           Kaze bakaze,
+                           Kaze jikaze) {
+        return fuKeisanService.fuKeisan(agariTehai, bakaze, jikaze);
     }
 }
