@@ -2,9 +2,15 @@ package com.example.tensukeisan.enums;
 
 public enum Kaze {
 
-    EAST,
-    WEST,
-    SOUTH,
-    NORTH
+    EAST("東"),
+    WEST("西"),
+    SOUTH("南"),
+    NORTH("北");
+
+    private final String kazeString;
+
+    private Kaze(String kazeString) {
+        this.kazeString = kazeString;
+    }
 
 }
