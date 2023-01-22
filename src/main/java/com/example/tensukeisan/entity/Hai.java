@@ -14,4 +14,11 @@ public class Hai {
 
     private boolean isYaochu;
 
+    public Hai(String haiName, HaiType haiType, Integer haiNumber, boolean isYaochu) {
+        this.haiName = haiName;
+        this.haiType = haiType;
+        this.haiNumber = haiNumber;
+        this.isYaochu = isYaochu;
+    }
+
 }

@@ -20,4 +20,17 @@ public class AgariTehai {
 
     private boolean isChitoitsu;
 
+    public AgariTehai(Atama atama,
+                      Mentsu mentsu1, Mentsu mentsu2, Mentsu mentsu3, Mentsu mentsu4,
+                      MachiType machiType,
+                      boolean isChitoitsu) {
+        this.atama = atama;
+        this.mentsu1 = mentsu1;
+        this.mentsu2 = mentsu2;
+        this.mentsu3 = mentsu3;
+        this.mentsu4 = mentsu4;
+        this.machiType = machiType;
+        this.isChitoitsu = isChitoitsu;
+    }
+
 }

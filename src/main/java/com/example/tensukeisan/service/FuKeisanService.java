@@ -12,7 +12,7 @@ import java.util.List;
 @Service
 public class FuKeisanService {
 
-    public int fuKeisan(AgariTehai agariTehai,
+    public static int fuKeisan(AgariTehai agariTehai,
                         Kaze baKaze,
                         Kaze jiKaze) {
 
@@ -50,7 +50,7 @@ public class FuKeisanService {
         return resultFu;
     }
 
-    private int fuKeisanMentsu(Mentsu mentsu) {
+    private static int fuKeisanMentsu(Mentsu mentsu) {
         if (MentsuType.ANKO.equals(mentsu.getMentsuType())) {
             // 暗刻の場合はヤオチュウ牌は8、それ以外は4
             if (mentsu.getHai1().isYaochu()) {

@@ -15,4 +15,11 @@ public class Mentsu {
 
     private MentsuType mentsuType;
 
+    public Mentsu(Hai hai1, Hai hai2, Hai hai3, MentsuType mentsuType) {
+        this.hai1 = hai1;
+        this.hai2 = hai2;
+        this.hai3 = hai3;
+        this.mentsuType = mentsuType;
+    }
+
 }
